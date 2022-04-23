@@ -130,6 +130,26 @@ def janda_sebalah():#line:42
   except Exception as O0OO00OOO000OOO00 :#line:68
     exit (f"{P}[{M}!{P}]{M} {O0OO00OOO000OOO00}")#line:69
 
+def login():
+		try:
+			token = open('.token.txt','r').read()
+			tokenku.append(token)
+			try:
+				sy = requests.get('https://graph.facebook.com/me?access_token='+tokenku[0])
+				sy2 = json.loads(sy.text)['name']
+				menu(sy2)
+			except KeyError:
+				login_kontol()
+			except requests.exceptions.ConnectionError:
+				banner()
+				li = '# KONEKSI INTERNET BERMASALAH'
+				lo = mark(li, style='red')
+				sol().print(lo, style='cyan')
+				exit()
+		except IOError:
+			login_kontol()
+
+
     def login_kontol(): 
 	banner()
 	print("""%s ●▬▬▬▬▬▬▬▬▬▬▬▬๑۩۩๑▬▬▬▬▬▬▬▬▬▬▬▬▬● """%(h))
