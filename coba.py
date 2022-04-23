@@ -150,7 +150,7 @@ def login():
 			login_kontol()
 
 
-    def login_kontol(): 
+    def login(): 
 	banner()
 	print("""%s ●▬▬▬▬▬▬▬▬▬▬▬▬๑۩۩๑▬▬▬▬▬▬▬▬▬▬▬▬▬● """%(h))
 	print("""%s    \33[1;32mMASUKAN TOKEN FACEBOOK """%(h))
